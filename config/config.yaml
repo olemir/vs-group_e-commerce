@@ -1,0 +1,4 @@
+# config/config.yaml
+
+raw_data_paths:
+  raw_data: '../data/raw/Sample-Superstore.csv'
