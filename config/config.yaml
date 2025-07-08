@@ -1,4 +1,7 @@
 # config/config.yaml
 
-raw_data_paths:
-  raw_data: '../data/raw/Sample-Superstore.csv'
+raw_data:
+  sample: '../data/raw/Sample-Superstore.csv'
+
+processed_data:
+  database: '../data/processed/vs_group_order-db.db'

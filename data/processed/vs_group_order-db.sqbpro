@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="vs_group_order-db.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="browser pragmas query" current="2"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2889"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="address" custom_title="0" dock_id="1" table="4,7:mainaddress"/><dock_state state="000000ff00000000fd0000000100000002000005b400000381fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000005b40000011700ffffff000002980000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="create-tables*">CREATE TABLE customer (
+	ID INTEGER PRIMARY KEY,
+	Name TEXT NOT NULL,
+	Segment TEXT
+);
+
+-- constraints needed? 
+CREATE TABLE product (
+	ID INTEGER PRIMARY KEY,
+	Name TEXT NOT NULL,
+	Category TEXT,
+	SubCategory TEXT,
+	Price NUMERIC,
+	Profit NUMERIC
+);
+
+CREATE	TABLE address (
+	ID INTEGER PRIMARY KEY,
+	Country TEXT,
+	Region TEXT,
+	State TEXT,
+	City TEXT,
+	PostalCode INTEGER
+);
+
+CREATE TABLE shipment (
+	ID INTEGER PRIMARY KEY,
+	AddressID INTEGER,
+	ShipmentMode TEXT,
+	ShipmentDate DATE,
+	FOREIGN KEY (AddressID) REFERENCES address(ID)
+);
+
+CREATE TABLE orders (
+	&quot;Date&quot; DATE NOT NULL,
+	ProductID INTEGER NOT NULL,
+	CustomerID INTEGER NOT NULL,
+	ShipmentID INTEGER NOT NULL,
+	OrderReference TEXT NOT NULL,
+	Quantity INTEGER NOT NULL,
+	Discount NUMERIC,
+	Sales NUMERIC NOT NULL,
+	Profit NUMERIC,
+	FOREIGN KEY (ProductID) REFERENCES product(ID),
+	FOREIGN KEY (CustomerID) REFERENCES customer(ID),
+	FOREIGN KEY (ShipmentID) REFERENCES shipment(ID),
+	PRIMARY KEY (ProductID, CustomerID, OrderReference)
+);</sql><sql name="drop-tables*">DROP TABLE IF EXISTS customer;
+DROP TABLE IF EXISTS product;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS shipment;
+DROP TABLE IF EXISTS address;</sql><current_tab id="0"/></tab_sql></sqlb_project>
