@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS customer;
+DROP TABLE IF EXISTS product;
+DROP TABLE IF EXISTS productcategories;
+DROP TABLE IF EXISTS shipment;
+DROP TABLE IF EXISTS address;
+DROP TABLE IF EXISTS addresssecondary;

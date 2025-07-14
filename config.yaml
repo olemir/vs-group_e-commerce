@@ -4,4 +4,9 @@ raw_data:
   sample: '../data/raw/Sample-Superstore.csv'
 
 processed_data:
-  database: '../data/processed/vs_group_order-db.db'
+  database_sqlite:  '../data/processed/vs_group_order-db.db'
+  database_access:  '../data/processed/vs_group_order-db.accdb'
+  sample_parquet:   '../data/processed/Sample-Superstore_processed.parquet'
+  sample_csv:       '../data/processed/Sample-Superstore_processed.csv'
+
+queries_path: '../src/queries'

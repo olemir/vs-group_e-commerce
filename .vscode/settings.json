@@ -1,0 +1,11 @@
+{
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:Project-4_supastore}/data/processed/vs_group_order-db.db",
+            "name": "vs_group_db"
+        }
+    ]
+}
