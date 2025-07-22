@@ -1,6 +1,10 @@
+DROP VIEW IF EXISTS view_all;
+
 CREATE VIEW IF NOT EXISTS view_all AS
-	SELECT 
+	SELECT
 		orders.*,
+		IIF(orders.Discount>0, round(product.PriceSell * orders.Quantity - orders.Sales, 4), 0) AS DiscountAmount,
+		round(product.PriceSell * orders.Quantity, 4) AS SalesWoDiscount,
 		customer.Name AS CustomerName,
 		customer.Segment AS Segment,
 		product.Name AS ProductName,
