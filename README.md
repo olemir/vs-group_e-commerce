@@ -1,5 +1,5 @@
 # VS Group E-Commerce Project
-A fictious E-Commerce Business Intelligence project about VS Group, a U.S. company with ambitions to expand their burgeoning E-Commerce business with stuff within the USA. 
+A fictious E-Commerce Business Intelligence project about VS Group, a U.S. company with ambitions to expand their burgeoning E-Commerce business with stuff within the USA.
 
 
 

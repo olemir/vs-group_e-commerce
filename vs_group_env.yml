@@ -16,3 +16,7 @@ dependencies:
   - pyyaml
   - chardet
   - matplotlib
+  - yellowbrick
+  - seaborn
+  - pip:
+    - gower
