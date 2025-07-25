@@ -3,6 +3,7 @@ WITH
 tbl AS (
     SELECT 
         customer.ID AS CustomerID,
+        customer.Segment,
         productcategories.Category,
         productcategories.SubCategory,
         orders.Sales,
@@ -26,6 +27,7 @@ tbl_total AS (
 tbl_pivot AS (
     SELECT
         CustomerID,
+        Segment,
         COUNT(DISTINCT OrderReference) AS NumOrders,
         sum(Sales) AS Sales,
         sum(Sales) / COUNT(DISTINCT OrderReference) AS AOV,
